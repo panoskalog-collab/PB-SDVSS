@@ -1,0 +1,70 @@
+CAO / UDV-PBS RELIC benchmark metadata
+============================================================
+Benchmark mode: single-threaded process, requested core 0
+Timing method: clock_gettime(CLOCK_MONOTONIC), wall-clock seconds
+Message length: 200 bytes
+Common-info c length: 32 bytes
+Iterations per repeated run: 1000
+Warm-up iterations: 100
+Repeated timed runs: 10
+Timed region Issue: UDV-PBS issue protocol only; m/c generation excluded
+Timed region Verify: public PB verification only; issue and m/c generation excluded
+Timed region Designate: designation only; issue generation excluded
+Timed region DVVerify: designated verification only; issue/designation generation excluded
+Compiler flags recorded: -O3 -Wall -Wextra
+Compiler: GCC-compatible 14.2.0
+CPU online cores: 4
+System: Linux 6.12.75+rpt-rpi-v8 aarch64 vanet
+CPU governor cpu0: ondemand
+CPU governor cpu1: ondemand
+CPU governor cpu2: ondemand
+CPU governor cpu3: ondemand
+RELIC parameter set selected by pc_param_set_any(); details printed below.
+============================================================
+
+--- RELIC pairing parameters ---
+
+-- Curve BN-P256:
+--------------------------------
+
+=== CAO / UDV-Partially-Blind Signatures, pairing-based RELIC ===
+Building CAO/UDV-PBS dataset outside timed region...
+Dataset ready: 1000 valid messages/signatures/designated signatures.
+
+  Size summary:
+    scalar size (Z_q):                 32 bytes (256 bits)
+    G1 element (compressed):           33 bytes (264 bits)
+    G2 element (compressed):           65 bytes (520 bits)
+    pk1 (signer pub, in G2):           65 bytes (520 bits)
+    pk3 (verifier pub, in G2):         65 bytes (520 bits)
+    sk1, sk3 (scalars):                32 bytes each (256 bits)
+    Partially blind sig (Y', S'):      66 bytes (528 bits)
+      breakdown: Y'=33, S'=33
+    DV sig (Y', phi in GT):            289 bytes (2312 bits)
+      breakdown: Y'=33, phi=256
+
+  Algorithm Issue full protocol -> (Y',S'), single-threaded:
+    mean:       3746.991 us/op
+    median:     3738.003 us/op
+    std. dev.:  34.956 us/op over 10 repeated runs
+    throughput: 266.88 ops/sec, based on mean
+
+  Algorithm Verify public PB signature, single-threaded:
+    mean:       9738.983 us/op
+    median:     9813.649 us/op
+    std. dev.:  177.266 us/op over 10 repeated runs
+    throughput: 102.68 ops/sec, based on mean
+
+  Algorithm Designate phi = e(S', pk3), single-threaded:
+    mean:       4437.858 us/op
+    median:     4459.016 us/op
+    std. dev.:  45.133 us/op over 10 repeated runs
+    throughput: 225.33 ops/sec, based on mean
+
+  Algorithm Designated Verification, single-threaded:
+    mean:       6020.902 us/op
+    median:     6058.337 us/op
+    std. dev.:  97.362 us/op over 10 repeated runs
+    throughput: 166.09 ops/sec, based on mean
+
+CSV results written to: cao_udv_pbs_results_raspberry.csv

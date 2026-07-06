@@ -1,0 +1,5 @@
+scheme,implementation,parameter_set,operation,iterations,warmup,repetitions,mean_us,median_us,stddev_us,throughput_ops_sec,signature_bytes,notes
+CAO_UDV_PBS,RELIC,pc_param_set_any,Issue,1000,100,10,3746.991450,3738.003270,34.955814,266.880780,66,PB_signature_Yp_Sp
+CAO_UDV_PBS,RELIC,pc_param_set_any,VerifyPB,1000,100,10,9738.982973,9813.649244,177.265852,102.680126,66,public_pairing_verify
+CAO_UDV_PBS,RELIC,pc_param_set_any,Designate,1000,100,10,4437.857802,4459.015830,45.133194,225.333944,289,phi_equals_pairing
+CAO_UDV_PBS,RELIC,pc_param_set_any,DVVerify,1000,100,10,6020.901583,6058.336973,97.362216,166.088083,289,designated_pairing_verify
