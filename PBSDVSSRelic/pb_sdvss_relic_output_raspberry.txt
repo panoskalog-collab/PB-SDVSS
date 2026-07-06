@@ -1,0 +1,50 @@
+PB-SDVSS RELIC benchmark metadata
+============================================================
+Benchmark mode: single-threaded process, requested core 0
+Timing method: clock_gettime(CLOCK_MONOTONIC), wall-clock seconds
+Message length: 200 bytes
+Info length: 32 bytes
+Iterations per repeated run: 1000
+Warm-up iterations: 100
+Repeated timed runs: 10
+Timed region Sign: PB-SDVSS.Sign only; message/info generation excluded
+Timed region Verify: PB-SDVSS.Verify only; message/info/signature generation excluded
+Compiler flags recorded: -O3 -Wall -Wextra
+Compiler: GCC-compatible 14.2.0
+CPU online cores: 4
+System: Linux 6.12.75+rpt-rpi-v8 aarch64 vanet
+CPU governor cpu0: ondemand
+CPU governor cpu1: ondemand
+CPU governor cpu2: ondemand
+CPU governor cpu3: ondemand
+RELIC parameter set selected by pc_param_set_any(); details printed below.
+============================================================
+
+=== PB-SDVSS over RELIC G1, active pairing parameters, no pairings ===
+  Key / Signature sizes (compressed):
+    scalar size (Z_q):       32 bytes (256 bits)
+    sk_S=(s1,s2):            64 bytes (512 bits)
+    sk_V=s:                  32 bytes (256 bits)
+    pk_S=v (G1):             33 bytes (264 bits)
+    pk_V=k (G1):             33 bytes (264 bits)
+    PB-SDVSS signature:      130 bytes (1040 bits)
+      breakdown: x*=33, a*=32, sig1=33, sig2=32
+
+--- RELIC pairing parameters ---
+
+-- Curve BN-P256:
+--------------------------------
+
+  Algorithm PB-SDVSS.Sign, single-threaded:
+    mean:       4734.515 us/op
+    median:     4754.964 us/op
+    std. dev.:  130.837 us/op over 10 repeated runs
+    throughput: 211.21 ops/sec, based on mean
+
+  Algorithm PB-SDVSS.Verify, single-threaded:
+    mean:       2080.781 us/op
+    median:     2055.717 us/op
+    std. dev.:  81.554 us/op over 10 repeated runs
+    throughput: 480.59 ops/sec, based on mean
+
+CSV results written to: pb_sdvss_relic_results_raspberry.csv

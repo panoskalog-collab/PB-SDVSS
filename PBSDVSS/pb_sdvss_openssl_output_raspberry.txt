@@ -1,0 +1,240 @@
+CPU affinity: pinned to core 0
+============================================================
+PB-SDVSS OpenSSL benchmark metadata
+============================================================
+Benchmark mode: single-threaded process, requested core 0
+Timing method: clock_gettime(CLOCK_MONOTONIC), wall-clock seconds
+Message length: 200 bytes
+Info length: 32 bytes
+Iterations per repeated run: 1000
+Warm-up iterations: 100
+Repeated timed runs: 10
+Timed region Sign: PB-SDVSS.Sign only; message/info generation excluded
+Timed region Verify: PB-SDVSS.Verify only; message/info/signature generation excluded
+Compiler flags recorded: -O3 -Wall -Wextra
+OpenSSL: OpenSSL 3.5.6 7 Apr 2026
+Compiler: GCC-compatible 14.2.0
+Raspberry/Pi model: Raspberry Pi 4 Model B Rev 1.4
+CPU online cores: 4
+CPU governor cpu0: ondemand
+CPU governor cpu1: ondemand
+CPU governor cpu2: ondemand
+CPU governor cpu3: ondemand
+============================================================
+
+=== Curve: prime192v1 (NIST P-192) (NID=409) ===
+  Key / Signature sizes (compressed points):
+    scalar size (Z_q):       24 bytes (192 bits)
+    sk_S = (s1,s2):          48 bytes (384 bits)
+    sk_V = s:                24 bytes (192 bits)
+    pk_S = v (EC point):     25 bytes (200 bits)
+    pk_V = k (EC point):     25 bytes (200 bits)
+    PB-SDVSS signature (x*, a*, sig1, sig2):
+      total:                 98 bytes (784 bits)
+      breakdown:
+        x*    (EC point):    25 bytes
+        a*    (scalar):      24 bytes
+        sig1  (EC point):    25 bytes
+        sig2  (scalar):      24 bytes
+
+  Algorithm PB-SDVSS.Sign, single-threaded:
+    mean:       6096.484 µs/op
+    median:     6093.313 µs/op
+    std. dev.:  12.961 µs/op over 10 repeated runs
+    throughput: 164.03 ops/sec, based on mean
+
+  Algorithm PB-SDVSS.Verify, single-threaded:
+    mean:       2693.670 µs/op
+    median:     2692.818 µs/op
+    std. dev.:  4.789 µs/op over 10 repeated runs
+    throughput: 371.24 ops/sec, based on mean
+
+=== Curve: secp224r1 (NIST P-224) (NID=713) ===
+  Key / Signature sizes (compressed points):
+    scalar size (Z_q):       28 bytes (224 bits)
+    sk_S = (s1,s2):          56 bytes (448 bits)
+    sk_V = s:                28 bytes (224 bits)
+    pk_S = v (EC point):     29 bytes (232 bits)
+    pk_V = k (EC point):     29 bytes (232 bits)
+    PB-SDVSS signature (x*, a*, sig1, sig2):
+      total:                 114 bytes (912 bits)
+      breakdown:
+        x*    (EC point):    29 bytes
+        a*    (scalar):      28 bytes
+        sig1  (EC point):    29 bytes
+        sig2  (scalar):      28 bytes
+
+  Algorithm PB-SDVSS.Sign, single-threaded:
+    mean:       1827.983 µs/op
+    median:     1828.000 µs/op
+    std. dev.:  0.378 µs/op over 10 repeated runs
+    throughput: 547.05 ops/sec, based on mean
+
+  Algorithm PB-SDVSS.Verify, single-threaded:
+    mean:       786.334 µs/op
+    median:     785.679 µs/op
+    std. dev.:  1.535 µs/op over 10 repeated runs
+    throughput: 1271.72 ops/sec, based on mean
+
+=== Curve: prime256v1 (NIST P-256) (NID=415) ===
+  Key / Signature sizes (compressed points):
+    scalar size (Z_q):       32 bytes (256 bits)
+    sk_S = (s1,s2):          64 bytes (512 bits)
+    sk_V = s:                32 bytes (256 bits)
+    pk_S = v (EC point):     33 bytes (264 bits)
+    pk_V = k (EC point):     33 bytes (264 bits)
+    PB-SDVSS signature (x*, a*, sig1, sig2):
+      total:                 130 bytes (1040 bits)
+      breakdown:
+        x*    (EC point):    33 bytes
+        a*    (scalar):      32 bytes
+        sig1  (EC point):    33 bytes
+        sig2  (scalar):      32 bytes
+
+  Algorithm PB-SDVSS.Sign, single-threaded:
+    mean:       1516.842 µs/op
+    median:     1514.442 µs/op
+    std. dev.:  7.612 µs/op over 10 repeated runs
+    throughput: 659.26 ops/sec, based on mean
+
+  Algorithm PB-SDVSS.Verify, single-threaded:
+    mean:       649.326 µs/op
+    median:     649.401 µs/op
+    std. dev.:  0.333 µs/op over 10 repeated runs
+    throughput: 1540.06 ops/sec, based on mean
+
+=== Curve: secp256k1 (Bitcoin) (NID=714) ===
+  Key / Signature sizes (compressed points):
+    scalar size (Z_q):       32 bytes (256 bits)
+    sk_S = (s1,s2):          64 bytes (512 bits)
+    sk_V = s:                32 bytes (256 bits)
+    pk_S = v (EC point):     33 bytes (264 bits)
+    pk_V = k (EC point):     33 bytes (264 bits)
+    PB-SDVSS signature (x*, a*, sig1, sig2):
+      total:                 130 bytes (1040 bits)
+      breakdown:
+        x*    (EC point):    33 bytes
+        a*    (scalar):      32 bytes
+        sig1  (EC point):    33 bytes
+        sig2  (scalar):      32 bytes
+
+  Algorithm PB-SDVSS.Sign, single-threaded:
+    mean:       10475.560 µs/op
+    median:     10470.526 µs/op
+    std. dev.:  16.549 µs/op over 10 repeated runs
+    throughput: 95.46 ops/sec, based on mean
+
+  Algorithm PB-SDVSS.Verify, single-threaded:
+    mean:       4621.532 µs/op
+    median:     4618.280 µs/op
+    std. dev.:  16.019 µs/op over 10 repeated runs
+    throughput: 216.38 ops/sec, based on mean
+
+=== Curve: secp384r1 (NIST P-384) (NID=715) ===
+  Key / Signature sizes (compressed points):
+    scalar size (Z_q):       48 bytes (384 bits)
+    sk_S = (s1,s2):          96 bytes (768 bits)
+    sk_V = s:                48 bytes (384 bits)
+    pk_S = v (EC point):     49 bytes (392 bits)
+    pk_V = k (EC point):     49 bytes (392 bits)
+    PB-SDVSS signature (x*, a*, sig1, sig2):
+      total:                 194 bytes (1552 bits)
+      breakdown:
+        x*    (EC point):    49 bytes
+        a*    (scalar):      48 bytes
+        sig1  (EC point):    49 bytes
+        sig2  (scalar):      48 bytes
+
+  Algorithm PB-SDVSS.Sign, single-threaded:
+    mean:       8990.782 µs/op
+    median:     8989.241 µs/op
+    std. dev.:  2.450 µs/op over 10 repeated runs
+    throughput: 111.23 ops/sec, based on mean
+
+  Algorithm PB-SDVSS.Verify, single-threaded:
+    mean:       3897.742 µs/op
+    median:     3897.580 µs/op
+    std. dev.:  0.451 µs/op over 10 repeated runs
+    throughput: 256.56 ops/sec, based on mean
+
+=== Curve: secp521r1 (NIST P-521) (NID=716) ===
+  Key / Signature sizes (compressed points):
+    scalar size (Z_q):       66 bytes (528 bits)
+    sk_S = (s1,s2):          132 bytes (1056 bits)
+    sk_V = s:                66 bytes (528 bits)
+    pk_S = v (EC point):     67 bytes (536 bits)
+    pk_V = k (EC point):     67 bytes (536 bits)
+    PB-SDVSS signature (x*, a*, sig1, sig2):
+      total:                 266 bytes (2128 bits)
+      breakdown:
+        x*    (EC point):    67 bytes
+        a*    (scalar):      66 bytes
+        sig1  (EC point):    67 bytes
+        sig2  (scalar):      66 bytes
+
+  Algorithm PB-SDVSS.Sign, single-threaded:
+    mean:       13370.402 µs/op
+    median:     13369.931 µs/op
+    std. dev.:  2.886 µs/op over 10 repeated runs
+    throughput: 74.79 ops/sec, based on mean
+
+  Algorithm PB-SDVSS.Verify, single-threaded:
+    mean:       5802.894 µs/op
+    median:     5802.697 µs/op
+    std. dev.:  1.195 µs/op over 10 repeated runs
+    throughput: 172.33 ops/sec, based on mean
+
+=== Curve: brainpoolP256r1 (NID=927) ===
+  Key / Signature sizes (compressed points):
+    scalar size (Z_q):       32 bytes (256 bits)
+    sk_S = (s1,s2):          64 bytes (512 bits)
+    sk_V = s:                32 bytes (256 bits)
+    pk_S = v (EC point):     33 bytes (264 bits)
+    pk_V = k (EC point):     33 bytes (264 bits)
+    PB-SDVSS signature (x*, a*, sig1, sig2):
+      total:                 130 bytes (1040 bits)
+      breakdown:
+        x*    (EC point):    33 bytes
+        a*    (scalar):      32 bytes
+        sig1  (EC point):    33 bytes
+        sig2  (scalar):      32 bytes
+
+  Algorithm PB-SDVSS.Sign, single-threaded:
+    mean:       9533.597 µs/op
+    median:     9531.602 µs/op
+    std. dev.:  5.145 µs/op over 10 repeated runs
+    throughput: 104.89 ops/sec, based on mean
+
+  Algorithm PB-SDVSS.Verify, single-threaded:
+    mean:       4221.403 µs/op
+    median:     4220.321 µs/op
+    std. dev.:  4.087 µs/op over 10 repeated runs
+    throughput: 236.89 ops/sec, based on mean
+
+=== Curve: brainpoolP384r1 (NID=931) ===
+  Key / Signature sizes (compressed points):
+    scalar size (Z_q):       48 bytes (384 bits)
+    sk_S = (s1,s2):          96 bytes (768 bits)
+    sk_V = s:                48 bytes (384 bits)
+    pk_S = v (EC point):     49 bytes (392 bits)
+    pk_V = k (EC point):     49 bytes (392 bits)
+    PB-SDVSS signature (x*, a*, sig1, sig2):
+      total:                 194 bytes (1552 bits)
+      breakdown:
+        x*    (EC point):    49 bytes
+        a*    (scalar):      48 bytes
+        sig1  (EC point):    49 bytes
+        sig2  (scalar):      48 bytes
+
+  Algorithm PB-SDVSS.Sign, single-threaded:
+    mean:       25076.232 µs/op
+    median:     25073.658 µs/op
+    std. dev.:  7.466 µs/op over 10 repeated runs
+    throughput: 39.88 ops/sec, based on mean
+
+  Algorithm PB-SDVSS.Verify, single-threaded:
+    mean:       11087.880 µs/op
+    median:     11087.057 µs/op
+    std. dev.:  12.689 µs/op over 10 repeated runs
+    throughput: 90.19 ops/sec, based on mean
+

@@ -1,0 +1,567 @@
+PB-SDVSS OpenSSL multi-core benchmark metadata
+============================================================
+Benchmark mode: OpenMP multi-threaded process
+OpenMP: enabled, _OPENMP=201511
+Requested threads: 4
+Actual OpenMP threads observed: 4
+Requested CPU affinity: 0-3
+Timing method: clock_gettime(CLOCK_MONOTONIC), wall-clock seconds
+Message length: 200 bytes
+Info length: 32 bytes
+Iterations per repeated run: 5000
+Warm-up operations per benchmark: 500
+Repeated timed runs: 10
+Timed region Sign: PB-SDVSS.Sign only; message/info generation excluded
+Timed region Verify: PB-SDVSS.Verify only; message/info/signature generation excluded
+Verification datasets: A valid-only; B hard-invalid sig2-corrupted; C mixed 50/50
+Compiler flags recorded: -O3 -Wall -Wextra -fopenmp
+OpenSSL: OpenSSL 3.5.6 7 Apr 2026
+Compiler: GCC-compatible 14.2.0
+CPU online cores: 4
+System: Linux 6.12.75+rpt-rpi-v8 aarch64 vanet
+OMP_NUM_THREADS: not set
+OMP_PROC_BIND: not set
+OMP_PLACES: not set
+CPU governor cpu0: ondemand
+CPU governor cpu1: ondemand
+CPU governor cpu2: ondemand
+CPU governor cpu3: ondemand
+============================================================
+
+============================================================
+Curve: prime192v1 (NIST P-192) [p192], NID=409
+Requested OpenMP threads: 4; actual observed: 4
+Dataset size / timed operations: 5000
+============================================================
+  Building datasets A/B/C outside timed region...
+    A: 5000 valid signatures
+    B: 5000 hard-invalid signatures, sig2 corrupted
+    C: 5000 mixed signatures, 50% valid / 50% hard-invalid
+  Key / Signature sizes, compressed points:
+    scalar size:           24 bytes (192 bits)
+    sk_S = (s1,s2):        48 bytes (384 bits)
+    sk_V = s:              24 bytes (192 bits)
+    pk_S = v:              25 bytes (200 bits)
+    pk_V = k:              25 bytes (200 bits)
+    signature total:       98 bytes (784 bits)
+      x*:                  25 bytes
+      a*:                  24 bytes
+      sig1:                25 bytes
+      sig2:                24 bytes
+
+  Warm-up: PB-SDVSS.Sign, 500 operations outside timed region...
+  PB-SDVSS.Sign, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        1534.199 us/op
+    median:      1531.839 us/op
+    std. dev.:   6.513 us/op over 10 repeated runs
+    throughput:  651.81 ops/sec, based on mean
+    failures:    0
+
+  Warm-up: PB-SDVSS.Verify dataset A-valid, 500 operations outside timed region...
+  PB-SDVSS.Verify dataset A-valid, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        676.810 us/op
+    median:      674.622 us/op
+    std. dev.:   6.186 us/op over 10 repeated runs
+    throughput:  1477.52 ops/sec, based on mean
+    accepted:    5000
+    rejected:    0
+    mismatches:  0
+
+  Warm-up: PB-SDVSS.Verify dataset B-invalid, 500 operations outside timed region...
+  PB-SDVSS.Verify dataset B-invalid, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        675.705 us/op
+    median:      673.053 us/op
+    std. dev.:   5.184 us/op over 10 repeated runs
+    throughput:  1479.94 ops/sec, based on mean
+    accepted:    0
+    rejected:    5000
+    mismatches:  0
+
+  Warm-up: PB-SDVSS.Verify dataset C-mixed, 500 operations outside timed region...
+  PB-SDVSS.Verify dataset C-mixed, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        675.904 us/op
+    median:      674.330 us/op
+    std. dev.:   3.164 us/op over 10 repeated runs
+    throughput:  1479.50 ops/sec, based on mean
+    accepted:    2500
+    rejected:    2500
+    mismatches:  0
+
+============================================================
+Curve: secp224r1 (NIST P-224) [p224], NID=713
+Requested OpenMP threads: 4; actual observed: 4
+Dataset size / timed operations: 5000
+============================================================
+  Building datasets A/B/C outside timed region...
+    A: 5000 valid signatures
+    B: 5000 hard-invalid signatures, sig2 corrupted
+    C: 5000 mixed signatures, 50% valid / 50% hard-invalid
+  Key / Signature sizes, compressed points:
+    scalar size:           28 bytes (224 bits)
+    sk_S = (s1,s2):        56 bytes (448 bits)
+    sk_V = s:              28 bytes (224 bits)
+    pk_S = v:              29 bytes (232 bits)
+    pk_V = k:              29 bytes (232 bits)
+    signature total:       114 bytes (912 bits)
+      x*:                  29 bytes
+      a*:                  28 bytes
+      sig1:                29 bytes
+      sig2:                28 bytes
+
+  Warm-up: PB-SDVSS.Sign, 500 operations outside timed region...
+  PB-SDVSS.Sign, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        462.525 us/op
+    median:      459.897 us/op
+    std. dev.:   6.388 us/op over 10 repeated runs
+    throughput:  2162.04 ops/sec, based on mean
+    failures:    0
+
+  Warm-up: PB-SDVSS.Verify dataset A-valid, 500 operations outside timed region...
+  PB-SDVSS.Verify dataset A-valid, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        197.568 us/op
+    median:      197.471 us/op
+    std. dev.:   0.190 us/op over 10 repeated runs
+    throughput:  5061.55 ops/sec, based on mean
+    accepted:    5000
+    rejected:    0
+    mismatches:  0
+
+  Warm-up: PB-SDVSS.Verify dataset B-invalid, 500 operations outside timed region...
+  PB-SDVSS.Verify dataset B-invalid, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        198.535 us/op
+    median:      197.161 us/op
+    std. dev.:   3.269 us/op over 10 repeated runs
+    throughput:  5036.90 ops/sec, based on mean
+    accepted:    0
+    rejected:    5000
+    mismatches:  0
+
+  Warm-up: PB-SDVSS.Verify dataset C-mixed, 500 operations outside timed region...
+  PB-SDVSS.Verify dataset C-mixed, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        208.684 us/op
+    median:      198.377 us/op
+    std. dev.:   25.065 us/op over 10 repeated runs
+    throughput:  4791.94 ops/sec, based on mean
+    accepted:    2500
+    rejected:    2500
+    mismatches:  0
+
+============================================================
+Curve: prime256v1 (NIST P-256) [p256], NID=415
+Requested OpenMP threads: 4; actual observed: 4
+Dataset size / timed operations: 5000
+============================================================
+  Building datasets A/B/C outside timed region...
+    A: 5000 valid signatures
+    B: 5000 hard-invalid signatures, sig2 corrupted
+    C: 5000 mixed signatures, 50% valid / 50% hard-invalid
+  Key / Signature sizes, compressed points:
+    scalar size:           32 bytes (256 bits)
+    sk_S = (s1,s2):        64 bytes (512 bits)
+    sk_V = s:              32 bytes (256 bits)
+    pk_S = v:              33 bytes (264 bits)
+    pk_V = k:              33 bytes (264 bits)
+    signature total:       130 bytes (1040 bits)
+      x*:                  33 bytes
+      a*:                  32 bytes
+      sig1:                33 bytes
+      sig2:                32 bytes
+
+  Warm-up: PB-SDVSS.Sign, 500 operations outside timed region...
+  PB-SDVSS.Sign, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        381.867 us/op
+    median:      380.778 us/op
+    std. dev.:   2.590 us/op over 10 repeated runs
+    throughput:  2618.71 ops/sec, based on mean
+    failures:    0
+
+  Warm-up: PB-SDVSS.Verify dataset A-valid, 500 operations outside timed region...
+  PB-SDVSS.Verify dataset A-valid, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        163.463 us/op
+    median:      163.600 us/op
+    std. dev.:   0.303 us/op over 10 repeated runs
+    throughput:  6117.59 ops/sec, based on mean
+    accepted:    5000
+    rejected:    0
+    mismatches:  0
+
+  Warm-up: PB-SDVSS.Verify dataset B-invalid, 500 operations outside timed region...
+  PB-SDVSS.Verify dataset B-invalid, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        163.268 us/op
+    median:      163.378 us/op
+    std. dev.:   0.222 us/op over 10 repeated runs
+    throughput:  6124.91 ops/sec, based on mean
+    accepted:    0
+    rejected:    5000
+    mismatches:  0
+
+  Warm-up: PB-SDVSS.Verify dataset C-mixed, 500 operations outside timed region...
+  PB-SDVSS.Verify dataset C-mixed, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        171.275 us/op
+    median:      163.967 us/op
+    std. dev.:   16.813 us/op over 10 repeated runs
+    throughput:  5838.57 ops/sec, based on mean
+    accepted:    2500
+    rejected:    2500
+    mismatches:  0
+
+============================================================
+Curve: secp256k1 (Bitcoin) [k256], NID=714
+Requested OpenMP threads: 4; actual observed: 4
+Dataset size / timed operations: 5000
+============================================================
+  Building datasets A/B/C outside timed region...
+    A: 5000 valid signatures
+    B: 5000 hard-invalid signatures, sig2 corrupted
+    C: 5000 mixed signatures, 50% valid / 50% hard-invalid
+  Key / Signature sizes, compressed points:
+    scalar size:           32 bytes (256 bits)
+    sk_S = (s1,s2):        64 bytes (512 bits)
+    sk_V = s:              32 bytes (256 bits)
+    pk_S = v:              33 bytes (264 bits)
+    pk_V = k:              33 bytes (264 bits)
+    signature total:       130 bytes (1040 bits)
+      x*:                  33 bytes
+      a*:                  32 bytes
+      sig1:                33 bytes
+      sig2:                32 bytes
+
+  Warm-up: PB-SDVSS.Sign, 500 operations outside timed region...
+  PB-SDVSS.Sign, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        2629.608 us/op
+    median:      2627.683 us/op
+    std. dev.:   7.974 us/op over 10 repeated runs
+    throughput:  380.28 ops/sec, based on mean
+    failures:    0
+
+  Warm-up: PB-SDVSS.Verify dataset A-valid, 500 operations outside timed region...
+  PB-SDVSS.Verify dataset A-valid, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        1158.011 us/op
+    median:      1156.935 us/op
+    std. dev.:   3.992 us/op over 10 repeated runs
+    throughput:  863.55 ops/sec, based on mean
+    accepted:    5000
+    rejected:    0
+    mismatches:  0
+
+  Warm-up: PB-SDVSS.Verify dataset B-invalid, 500 operations outside timed region...
+  PB-SDVSS.Verify dataset B-invalid, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        1159.222 us/op
+    median:      1156.551 us/op
+    std. dev.:   8.977 us/op over 10 repeated runs
+    throughput:  862.65 ops/sec, based on mean
+    accepted:    0
+    rejected:    5000
+    mismatches:  0
+
+  Warm-up: PB-SDVSS.Verify dataset C-mixed, 500 operations outside timed region...
+  PB-SDVSS.Verify dataset C-mixed, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        1157.584 us/op
+    median:      1155.402 us/op
+    std. dev.:   6.927 us/op over 10 repeated runs
+    throughput:  863.87 ops/sec, based on mean
+    accepted:    2500
+    rejected:    2500
+    mismatches:  0
+
+============================================================
+Curve: secp384r1 (NIST P-384) [p384], NID=715
+Requested OpenMP threads: 4; actual observed: 4
+Dataset size / timed operations: 5000
+============================================================
+  Building datasets A/B/C outside timed region...
+    A: 5000 valid signatures
+    B: 5000 hard-invalid signatures, sig2 corrupted
+    C: 5000 mixed signatures, 50% valid / 50% hard-invalid
+  Key / Signature sizes, compressed points:
+    scalar size:           48 bytes (384 bits)
+    sk_S = (s1,s2):        96 bytes (768 bits)
+    sk_V = s:              48 bytes (384 bits)
+    pk_S = v:              49 bytes (392 bits)
+    pk_V = k:              49 bytes (392 bits)
+    signature total:       194 bytes (1552 bits)
+      x*:                  49 bytes
+      a*:                  48 bytes
+      sig1:                49 bytes
+      sig2:                48 bytes
+
+  Warm-up: PB-SDVSS.Sign, 500 operations outside timed region...
+  PB-SDVSS.Sign, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        2355.663 us/op
+    median:      2259.868 us/op
+    std. dev.:   185.230 us/op over 10 repeated runs
+    throughput:  424.51 ops/sec, based on mean
+    failures:    0
+
+  Warm-up: PB-SDVSS.Verify dataset A-valid, 500 operations outside timed region...
+  PB-SDVSS.Verify dataset A-valid, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        982.046 us/op
+    median:      979.445 us/op
+    std. dev.:   7.474 us/op over 10 repeated runs
+    throughput:  1018.28 ops/sec, based on mean
+    accepted:    5000
+    rejected:    0
+    mismatches:  0
+
+  Warm-up: PB-SDVSS.Verify dataset B-invalid, 500 operations outside timed region...
+  PB-SDVSS.Verify dataset B-invalid, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        980.548 us/op
+    median:      978.121 us/op
+    std. dev.:   6.870 us/op over 10 repeated runs
+    throughput:  1019.84 ops/sec, based on mean
+    accepted:    0
+    rejected:    5000
+    mismatches:  0
+
+  Warm-up: PB-SDVSS.Verify dataset C-mixed, 500 operations outside timed region...
+  PB-SDVSS.Verify dataset C-mixed, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        982.656 us/op
+    median:      980.529 us/op
+    std. dev.:   7.107 us/op over 10 repeated runs
+    throughput:  1017.65 ops/sec, based on mean
+    accepted:    2500
+    rejected:    2500
+    mismatches:  0
+
+============================================================
+Curve: secp521r1 (NIST P-521) [p521], NID=716
+Requested OpenMP threads: 4; actual observed: 4
+Dataset size / timed operations: 5000
+============================================================
+  Building datasets A/B/C outside timed region...
+    A: 5000 valid signatures
+    B: 5000 hard-invalid signatures, sig2 corrupted
+    C: 5000 mixed signatures, 50% valid / 50% hard-invalid
+  Key / Signature sizes, compressed points:
+    scalar size:           66 bytes (528 bits)
+    sk_S = (s1,s2):        132 bytes (1056 bits)
+    sk_V = s:              66 bytes (528 bits)
+    pk_S = v:              67 bytes (536 bits)
+    pk_V = k:              67 bytes (536 bits)
+    signature total:       266 bytes (2128 bits)
+      x*:                  67 bytes
+      a*:                  66 bytes
+      sig1:                67 bytes
+      sig2:                66 bytes
+
+  Warm-up: PB-SDVSS.Sign, 500 operations outside timed region...
+  PB-SDVSS.Sign, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        3363.887 us/op
+    median:      3362.938 us/op
+    std. dev.:   9.686 us/op over 10 repeated runs
+    throughput:  297.28 ops/sec, based on mean
+    failures:    0
+
+  Warm-up: PB-SDVSS.Verify dataset A-valid, 500 operations outside timed region...
+  PB-SDVSS.Verify dataset A-valid, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        1461.596 us/op
+    median:      1457.767 us/op
+    std. dev.:   9.975 us/op over 10 repeated runs
+    throughput:  684.18 ops/sec, based on mean
+    accepted:    5000
+    rejected:    0
+    mismatches:  0
+
+  Warm-up: PB-SDVSS.Verify dataset B-invalid, 500 operations outside timed region...
+  PB-SDVSS.Verify dataset B-invalid, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        1460.491 us/op
+    median:      1457.186 us/op
+    std. dev.:   8.849 us/op over 10 repeated runs
+    throughput:  684.70 ops/sec, based on mean
+    accepted:    0
+    rejected:    5000
+    mismatches:  0
+
+  Warm-up: PB-SDVSS.Verify dataset C-mixed, 500 operations outside timed region...
+  PB-SDVSS.Verify dataset C-mixed, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        1462.357 us/op
+    median:      1458.832 us/op
+    std. dev.:   10.453 us/op over 10 repeated runs
+    throughput:  683.83 ops/sec, based on mean
+    accepted:    2500
+    rejected:    2500
+    mismatches:  0
+
+============================================================
+Curve: brainpoolP256r1 [bp256], NID=927
+Requested OpenMP threads: 4; actual observed: 4
+Dataset size / timed operations: 5000
+============================================================
+  Building datasets A/B/C outside timed region...
+    A: 5000 valid signatures
+    B: 5000 hard-invalid signatures, sig2 corrupted
+    C: 5000 mixed signatures, 50% valid / 50% hard-invalid
+  Key / Signature sizes, compressed points:
+    scalar size:           32 bytes (256 bits)
+    sk_S = (s1,s2):        64 bytes (512 bits)
+    sk_V = s:              32 bytes (256 bits)
+    pk_S = v:              33 bytes (264 bits)
+    pk_V = k:              33 bytes (264 bits)
+    signature total:       130 bytes (1040 bits)
+      x*:                  33 bytes
+      a*:                  32 bytes
+      sig1:                33 bytes
+      sig2:                32 bytes
+
+  Warm-up: PB-SDVSS.Sign, 500 operations outside timed region...
+  PB-SDVSS.Sign, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        2391.829 us/op
+    median:      2389.037 us/op
+    std. dev.:   8.728 us/op over 10 repeated runs
+    throughput:  418.09 ops/sec, based on mean
+    failures:    0
+
+  Warm-up: PB-SDVSS.Verify dataset A-valid, 500 operations outside timed region...
+  PB-SDVSS.Verify dataset A-valid, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        1053.769 us/op
+    median:      1051.457 us/op
+    std. dev.:   7.024 us/op over 10 repeated runs
+    throughput:  948.97 ops/sec, based on mean
+    accepted:    5000
+    rejected:    0
+    mismatches:  0
+
+  Warm-up: PB-SDVSS.Verify dataset B-invalid, 500 operations outside timed region...
+  PB-SDVSS.Verify dataset B-invalid, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        1054.845 us/op
+    median:      1054.560 us/op
+    std. dev.:   3.372 us/op over 10 repeated runs
+    throughput:  948.01 ops/sec, based on mean
+    accepted:    0
+    rejected:    5000
+    mismatches:  0
+
+  Warm-up: PB-SDVSS.Verify dataset C-mixed, 500 operations outside timed region...
+  PB-SDVSS.Verify dataset C-mixed, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        1056.804 us/op
+    median:      1053.549 us/op
+    std. dev.:   8.771 us/op over 10 repeated runs
+    throughput:  946.25 ops/sec, based on mean
+    accepted:    2500
+    rejected:    2500
+    mismatches:  0
+
+============================================================
+Curve: brainpoolP384r1 [bp384], NID=931
+Requested OpenMP threads: 4; actual observed: 4
+Dataset size / timed operations: 5000
+============================================================
+  Building datasets A/B/C outside timed region...
+    A: 5000 valid signatures
+    B: 5000 hard-invalid signatures, sig2 corrupted
+    C: 5000 mixed signatures, 50% valid / 50% hard-invalid
+  Key / Signature sizes, compressed points:
+    scalar size:           48 bytes (384 bits)
+    sk_S = (s1,s2):        96 bytes (768 bits)
+    sk_V = s:              48 bytes (384 bits)
+    pk_S = v:              49 bytes (392 bits)
+    pk_V = k:              49 bytes (392 bits)
+    signature total:       194 bytes (1552 bits)
+      x*:                  49 bytes
+      a*:                  48 bytes
+      sig1:                49 bytes
+      sig2:                48 bytes
+
+  Warm-up: PB-SDVSS.Sign, 500 operations outside timed region...
+  PB-SDVSS.Sign, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        6293.308 us/op
+    median:      6291.795 us/op
+    std. dev.:   8.902 us/op over 10 repeated runs
+    throughput:  158.90 ops/sec, based on mean
+    failures:    0
+
+  Warm-up: PB-SDVSS.Verify dataset A-valid, 500 operations outside timed region...
+  PB-SDVSS.Verify dataset A-valid, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        2784.284 us/op
+    median:      2780.256 us/op
+    std. dev.:   8.402 us/op over 10 repeated runs
+    throughput:  359.16 ops/sec, based on mean
+    accepted:    5000
+    rejected:    0
+    mismatches:  0
+
+  Warm-up: PB-SDVSS.Verify dataset B-invalid, 500 operations outside timed region...
+  PB-SDVSS.Verify dataset B-invalid, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        2790.148 us/op
+    median:      2786.136 us/op
+    std. dev.:   12.940 us/op over 10 repeated runs
+    throughput:  358.40 ops/sec, based on mean
+    accepted:    0
+    rejected:    5000
+    mismatches:  0
+
+  Warm-up: PB-SDVSS.Verify dataset C-mixed, 500 operations outside timed region...
+  PB-SDVSS.Verify dataset C-mixed, multi-threaded:
+    threads:     4
+    operations:  5000 per repeated run
+    mean:        2786.255 us/op
+    median:      2781.468 us/op
+    std. dev.:   10.477 us/op over 10 repeated runs
+    throughput:  358.90 ops/sec, based on mean
+    accepted:    2500
+    rejected:    2500
+    mismatches:  0
+
+CSV results written to: pb_sdvss_multicore_all_curves_raspberry.csv
