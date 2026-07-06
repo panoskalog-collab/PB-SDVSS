@@ -1,0 +1,9 @@
+scheme,params,operation,mean_us,median_us,stddev_us,throughput_ops_s,repetitions,iterations,warmup,notes
+Zhang-Wen BIDSDVS,BN-P256 Type-III RELIC,Setup + Extract,3414.377100,3412.192000,53.325152,292.879190,10,1000,100,identity extraction measured separately
+Zhang-Wen BIDSDVS,BN-P256 Type-III RELIC,Issue total,11577.308746,11544.384164,145.482679,86.375860,10,1000,100,blind-signing protocol, message generation excluded
+Zhang-Wen BIDSDVS,BN-P256 Type-III RELIC,Issue / Signer commitment,6800.631034,6754.669930,116.777947,147.045178,10,1000,100,phase breakdown
+Zhang-Wen BIDSDVS,BN-P256 Type-III RELIC,Issue / User blinding,2607.629661,2593.196862,38.252004,383.490039,10,1000,100,phase breakdown
+Zhang-Wen BIDSDVS,BN-P256 Type-III RELIC,Issue / Signer response,1392.523760,1400.013033,20.682862,718.120601,10,1000,100,phase breakdown
+Zhang-Wen BIDSDVS,BN-P256 Type-III RELIC,Issue / User unblinding,776.078158,780.838959,15.282044,1288.530014,10,1000,100,phase breakdown
+Zhang-Wen BIDSDVS,BN-P256 Type-III RELIC,Designated Verify,18014.918986,17811.146029,352.797200,55.509547,10,1000,100,verification dataset pre-generated outside timed region
+Zhang-Wen BIDSDVS,BN-P256 Type-III RELIC,Verifier Simulate,7648.168442,7584.488523,140.326925,130.750258,10,1000,100,simulator only, message generation excluded

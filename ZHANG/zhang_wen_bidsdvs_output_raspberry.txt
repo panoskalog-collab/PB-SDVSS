@@ -1,0 +1,68 @@
+Zhang-Wen BIDSDVS RELIC benchmark metadata
+============================================================
+Benchmark mode: single-threaded process, requested core 0
+Timing method: clock_gettime(CLOCK_MONOTONIC), wall-clock seconds
+Message length: 200 bytes
+Iterations per repeated run: 1000
+Warm-up iterations: 100
+Repeated timed runs: 10
+Timed region Issue: Zhang-Wen blind-signing issue protocol only; message generation excluded
+Timed region Verify: designated verification only; message/signature generation excluded
+Timed region Simulate: verifier-side simulation only; message generation excluded
+Compiler flags recorded: -O3 -Wall -Wextra
+Compiler: GCC-compatible 14.2.0
+CPU online cores: 4
+System: Linux 6.12.75+rpt-rpi-v8 aarch64 vanet
+CPU governor cpu0: ondemand
+CPU governor cpu1: ondemand
+CPU governor cpu2: ondemand
+CPU governor cpu3: ondemand
+RELIC parameter set selected by pc_param_set_any(); details printed below.
+============================================================
+
+============================================================
+=== Zhang-Wen BIDSDVS, RELIC Type-III implementation     ===
+============================================================
+
+  --- RELIC Pairing Parameters ---
+
+-- Curve BN-P256:
+
+  --- Cryptographic Sizes ---
+  Group order q:                         32 bytes (256 bits)
+  Master secret s:                       32 bytes (256 bits)
+
+  Signer public Q_IDA  (G1):             264 bits compressed, 520 bits uncompressed
+  Signer private S_IDA (G1):             264 bits compressed, 520 bits uncompressed
+  Verifier public Q_IDB  (G2):           520 bits compressed, 1032 bits uncompressed
+  Verifier private S_IDB (G2):           520 bits compressed, 1032 bits uncompressed
+
+  Zhang-Wen BIDSDVS signature, Type-III: (u1_hat, u2_hat, V_hat)
+    compressed:                          163 bytes (1304 bits)
+      u1_hat in G2:                      65 bytes
+      u2_hat in G2:                      65 bytes
+      V_hat  in G1:                      33 bytes
+    uncompressed:                        323 bytes (2584 bits)
+
+  --- Correctness Tests ---
+  Honest blind-issued signature verifies:        yes
+  Verifier-simulated signature verifies:         yes
+  Changed-message negative test rejects:         yes
+
+  --- Reproducible Performance Benchmarks ---
+  Setup + Extract                     mean:   3414.377 us/op | median:   3412.192 | std. dev.:    53.325 | throughput:    292.88 ops/s over 10 runs
+  Issue total                         mean:  11577.309 us/op | median:  11544.384 | std. dev.:   145.483 | throughput:     86.38 ops/s over 10 runs
+    Signer commitment                 mean:   6800.631 us/op | median:   6754.670 | std. dev.:   116.778 | throughput:    147.05 ops/s over 10 runs
+    User blinding                     mean:   2607.630 us/op | median:   2593.197 | std. dev.:    38.252 | throughput:    383.49 ops/s over 10 runs
+    Signer response                   mean:   1392.524 us/op | median:   1400.013 | std. dev.:    20.683 | throughput:    718.12 ops/s over 10 runs
+    User unblinding                   mean:    776.078 us/op | median:    780.839 | std. dev.:    15.282 | throughput:   1288.53 ops/s over 10 runs
+  Designated Verify                   mean:  18014.919 us/op | median:  17811.146 | std. dev.:   352.797 | throughput:     55.51 ops/s over 10 runs
+  Verifier Simulate                   mean:   7648.168 us/op | median:   7584.489 | std. dev.:   140.327 | throughput:    130.75 ops/s over 10 runs
+
+CSV results written to: zhang_wen_bidsdvs_results_raspberry.csv
+  --- Notes ---
+  The original Zhang-Wen paper is written with symmetric pairing notation.
+  This implementation uses RELIC Type-III pairings: G1 x G2 -> GT.
+  Therefore u1_hat and u2_hat are represented in G2, while V_hat is in G1.
+  Random message generation and verification-dataset construction are outside the timed regions.
+

@@ -1,0 +1,81 @@
+Sharma ID-SDVBS RELIC benchmark metadata
+============================================================
+Benchmark mode: single-threaded process, requested core 0
+Timing method: clock_gettime(CLOCK_MONOTONIC), wall-clock seconds
+Message length: 200 bytes
+Iterations per repeated run: 1000
+Warm-up iterations: 100
+Repeated timed runs: 10
+Timed region Issue: ID-SDVBS online issue only; message generation excluded
+Timed region Verify: Verify only; message/signature generation excluded
+Timed region Simulate: DVBSim only; message generation excluded
+Compiler flags recorded: -O3 -Wall -Wextra
+Compiler: GCC-compatible 14.2.0
+CPU online cores: 4
+System: Linux 6.12.75+rpt-rpi-v8 aarch64 vanet
+CPU governor cpu0: ondemand
+CPU governor cpu1: ondemand
+CPU governor cpu2: ondemand
+CPU governor cpu3: ondemand
+RELIC parameter set selected by pc_param_set_any(); details printed below.
+============================================================
+
+--- RELIC pairing parameters ---
+
+-- Curve BN-P256:
+--------------------------------
+
+=== Sharma et al. ID-SDVBS over RELIC, Type-III adaptation ===
+  --- Cryptographic Sizes ---
+  Group order q:               256 bits
+  Master secret s:             256 bits
+
+  Signer public P_IDs:         264 bits compressed, 520 bits uncompressed
+  Signer private Q_IDs:        264 bits compressed, 520 bits uncompressed
+  Verifier public P_IDv:       520 bits compressed, 1032 bits uncompressed
+  Verifier private Q_IDv:      520 bits compressed, 1032 bits uncompressed
+
+  Signature compressed:        2312 bits (U'=264, sigma=2048)
+  Signature uncompressed:      3592 bits (U'=520, sigma=3072)
+
+  Building verification dataset outside timed region...
+    Verification dataset: 1000 valid signatures
+
+  --- Performance Benchmarks ---
+  Algorithm Setup + Key Extract, single-threaded:
+    mean:       3421.674 us/op
+    median:     3392.701 us/op
+    std. dev.:  48.649 us/op over 10 repeated runs
+    throughput: 292.25 ops/sec, based on mean
+
+  Algorithm Issue / Total, single-threaded:
+    mean:       7847.507 us/op
+    median:     7861.568 us/op
+    std. dev.:  118.237 us/op over 10 repeated runs
+    throughput: 127.43 ops/sec, based on mean
+
+  Issue phase breakdown, mean values:
+    commitment:       673.114 us/op
+    blinding:         1475.364 us/op
+    signer response:  662.114 us/op
+    unblinding:       5036.645 us/op
+
+  Algorithm Designated Verify, single-threaded:
+    mean:       5150.399 us/op
+    median:     5150.194 us/op
+    std. dev.:  3.324 us/op over 10 repeated runs
+    throughput: 194.16 ops/sec, based on mean
+
+  Algorithm DVBSim / Simulate, single-threaded:
+    mean:       7855.028 us/op
+    median:     7911.239 us/op
+    std. dev.:  116.757 us/op over 10 repeated runs
+    throughput: 127.31 ops/sec, based on mean
+
+  --- Notes ---
+  This is a RELIC Type-III adaptation of the original symmetric-pairing notation.
+  Online Issue includes commitment, blinding, signer response, unblinding, and final pairing.
+  Setup and identity extraction are measured separately.
+  Verification and simulation datasets are generated outside the timed region.
+
+CSV results written to: sharma_id_sdvbs_results_raspberry.csv

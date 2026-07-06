@@ -1,0 +1,9 @@
+implementation,operation,iterations,warmup,repetitions,mean_us,median_us,stddev_us,throughput_ops_s,notes
+Sharma_ID_SDVBS_RELIC,SetupExtract,1000,100,10,3421.674255,3392.701470,48.649285,292.254588,setup_and_extract
+Sharma_ID_SDVBS_RELIC,Issue_Total,1000,100,10,7847.507000,7861.568314,118.236872,127.429004,commitment+blinding+signer_response+unblinding
+Sharma_ID_SDVBS_RELIC,Issue_Commitment,1000,100,10,673.114135,673.459332,4.520075,1485.632150,phase_only
+Sharma_ID_SDVBS_RELIC,Issue_Blinding,1000,100,10,1475.363961,1475.911692,7.909775,677.798853,phase_only
+Sharma_ID_SDVBS_RELIC,Issue_Signer_Response,1000,100,10,662.114439,664.838430,5.762742,1510.312934,phase_only
+Sharma_ID_SDVBS_RELIC,Issue_Unblinding,1000,100,10,5036.644819,5047.090010,100.446358,198.544872,phase_only_includes_pairing
+Sharma_ID_SDVBS_RELIC,Designated_Verify,1000,100,10,5150.398971,5150.193831,3.324353,194.159716,verify_only_dataset_pregenerated
+Sharma_ID_SDVBS_RELIC,DVBSim,1000,100,10,7855.028381,7911.239471,116.757370,127.306988,simulate_only
